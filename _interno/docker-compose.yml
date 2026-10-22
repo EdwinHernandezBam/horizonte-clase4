@@ -1,0 +1,9 @@
+# Emulador local de AWS (Floci). Para esta clase solo usamos colas (SQS) y tablas (DynamoDB),
+# así que NO montamos el socket de Docker (eso solo se necesita para funciones Lambda, clase 5).
+services:
+  floci:
+    image: floci/floci:${FLOCI_VERSION:-2.2.0}
+    container_name: floci-clase4
+    ports:
+      - "4566:4566"
+    restart: "no"

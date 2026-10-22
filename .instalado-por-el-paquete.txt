@@ -1,0 +1,3 @@
+python-venv
+imagen-nuestra:floci/floci:2.2.0
+imagen-nuestra:floci/floci-ui:0.7.0

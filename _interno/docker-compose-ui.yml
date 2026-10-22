@@ -1,0 +1,15 @@
+# Consola web OPCIONAL de Floci (solo para ver colas y tablas en el navegador).
+# Se abre en http://localhost:4500. No tiene contraseña, por eso solo escucha en esta máquina (127.0.0.1).
+services:
+  floci-ui:
+    image: floci/floci-ui:${FLOCI_UI_VERSION:-0.7.0}
+    container_name: floci-ui-clase4
+    ports:
+      - "127.0.0.1:4500:4500"
+      - "127.0.0.1:4501:4501"
+    environment:
+      AWS_ENDPOINT_URL: http://host.docker.internal:4566
+      FLOCI_ENDPOINT: http://host.docker.internal:4566
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: "no"
